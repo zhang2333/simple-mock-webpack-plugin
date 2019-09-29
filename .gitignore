@@ -1,0 +1,14 @@
+# OSX
+.DS_Store
+
+# Node.js
+node_modules
+*.log
+.vscode
+
+# Locks
+yarn.lock
+package-lock.json
+
+dist
+temp

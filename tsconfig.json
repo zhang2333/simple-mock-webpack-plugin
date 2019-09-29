@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+	    "target": "es5",
+		"moduleResolution": "node",
+		"outDir": "dist",
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "lib": [
+            "dom",
+            "scripthost",
+            "es2015",
+            "es2015.promise",
+            "es2016"
+        ]
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
