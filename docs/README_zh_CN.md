@@ -119,19 +119,19 @@ module.exports = {
 
 - `MockConfig`
 
-| 名称   	| 类型          	| 必要 	| 默认值 	| 描述                  	|
-|--------	|---------------	|------	|--------	|-----------------------	|
+| 名称   	| 类型           | 必要   | 默认值 	| 描述                  	|
+|--------	|------------   |------	|--------	|-----------------------	|
 | prefix 	| `string`    	| 否   	| `/`    	| 所有接口的路由前缀     	|
 | delay  	| `boolean`   	| 否   	| `0`    	| 所有接口的延迟返回时间 	|
 | apis   	| `MockAPI[]` 	| 是   	|        	| 接口配置列表           	|
 
 - `MockAPI`
 
-| 名称     	| 类型                        	| 必要 	| 默认值 	| 描述                                                                                                                                                       	|
-|----------	|-----------------------------	|------	|--------	|------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| url      	| `string`                  	| 是   	|        	| 接口相对`prefix`的地址，一般以`/`开头                                                                                                                      	|
-| method   	| `string`                  	| 否   	| `all`  	| 接口`Method`，默认支持全部类型的`Method`                                                                                                                   	|
-| template 	| `object | MockAPIHandler` 	| 是   	|        	| 接口描述，设置为`object`时视为`mockjs template`（详见[Syntax](https://github.com/nuysoft/Mock/wiki/Syntax-Specification)），设置为函数时可以自定义返回结果 	|
+| 名称       | 类型                           | 必要 | 默认值 	   | 描述                              |
+|----------	|-----------------------------	|----- |--------	|--------------------------------- |
+| url      	| `string`                  	| 是   	|        	| 接口相对`prefix`的地址，一般以`/`开头 |
+| method   	| `string`                  	| 否   	| `all`  	| 接口`Method`，默认支持全部类型的`Method` |
+| template 	| `object | MockAPIHandler` 	| 是   	|        	| 接口描述，设置为`object`时视为`mockjs template`（详见[Syntax](https://github.com/nuysoft/Mock/wiki/Syntax-Specification)），设置为函数时可以自定义返回结果 |
 
 - `MockAPIHandler`
 

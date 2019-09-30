@@ -129,11 +129,11 @@ Learn more about the configuration at [examples](https://github.com/zhang2333/si
 
 - `MockAPI`
 
-| Name     	| Type                        	| Required 	| Default 	| Description                                                                                                                                                       	|
-|----------	|-----------------------------	|--------	|--------	|------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| url      	| `string`                  	| Yes   	|        	| Path relative to the `prefix`                                                                                                                     	|
-| method   	| `string`                  	| No    	| `all`  	| The method of API                                                                                                                   	|
-| template 	| `object | MockAPIHandler` 	| Yes    	|        	| The tempalte of response. It will be regared as `mockjs template` if it is an `object`.（Learn more at [Syntax](https://github.com/nuysoft/Mock/wiki/Syntax-Specification)）. You can custmize reponse if you set it as a function. 	|
+| Name     	| Type                        	| Required 	| Default 	| Description                   |
+|----------	|-----------------------------	|--------	|--------	|------------------------------ |
+| url      	| `string`                  	| Yes   	|        	| Path relative to the `prefix` |
+| method   	| `string`                  	| No    	| `all`  	| The method of API |
+| template 	| `object | MockAPIHandler` 	| Yes    	|        	| The tempalte of response. It will be regared as `mockjs template` if it is an `object`.（Learn more at [Syntax](https://github.com/nuysoft/Mock/wiki/Syntax-Specification)）. You can custmize reponse if you set it as a function. |
 
 - `MockAPIHandler`
 
