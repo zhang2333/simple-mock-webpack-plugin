@@ -1,10 +1,21 @@
 {
   "name": "simple-mock-webpack-plugin",
   "version": "0.0.1",
+  "author": "Louis Zhang <spade9k@gmail.com>",
+  "description": "Binds a mocking service to your webpack-dev-server",
+  "keywords": [
+    "mock",
+    "mock server",
+    "webpack",
+    "webpack-plugin"
+  ],
   "scripts": {
     "build": "npm run clean && tsc -d",
     "clean": "rimraf dist"
   },
+  "files": [
+    "dist"
+  ],
   "main": "dist/index.js",
   "license": "MIT",
   "dependencies": {
