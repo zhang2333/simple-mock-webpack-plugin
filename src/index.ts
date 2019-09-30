@@ -7,18 +7,21 @@ import { Express } from 'express'
 
 import { mountMockRouter, unmountMockRouter } from './router'
 import { Options, MockConfig } from './types'
+import { logger, g } from './utils'
 
 export function buildBefore(options: Options = {}) {
     const before = options.before
     const mockConfigPath = options.configPath || path.resolve(process.cwd(), './mock.js')
     const reloadDelay = options.reloadDelay >= 0 ? options.reloadDelay : 300
 
+    g.options = options
+
     function importMockConfig(): MockConfig {
         let ret = null
         try {
             ret = require(mockConfigPath)
         } catch(e) {
-            console.error('An error occured when imports mock config:')
+            logger.error('An error occured when importing mock config:')
             console.error(e)
         }
 
@@ -30,7 +33,7 @@ export function buildBefore(options: Options = {}) {
         if (mockConfig) {
             unmountMockRouter(app)
             mountMockRouter(app, mockConfig)
-            console.log('Reloaded all mocking APIs.')
+            logger.info('Reloaded all mocking APIs.')
         }
     }
 
@@ -56,7 +59,7 @@ export function buildBefore(options: Options = {}) {
         }
 
         startWatchConfig(onConfigChange.bind(null, app))
-        console.log('Mocking service is started.')
+        logger.info('Mocking service is started.')
 
         before && before(app)
     }

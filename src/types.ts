@@ -2,6 +2,7 @@ import { Mockjs, MockjsMock } from 'mockjs'
 import { Request, Response } from 'express'
 
 export interface Options {
+    log?: boolean
     before?: Function
     configPath?: string
     reloadDelay?: number

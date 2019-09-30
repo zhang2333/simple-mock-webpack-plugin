@@ -1,7 +1,7 @@
 import { Router, Express, Request, Response } from 'express'
 import Mock from 'mockjs'
 
-import { wait } from './utils'
+import { wait, logger } from './utils'
 import { MockConfig, MockAPI, MockAPITemplate, MockAPIHandler } from './types'
 
 const MOCK_MARK = '_isMock'
@@ -45,6 +45,8 @@ function buildMockRouter(mockConfig: MockConfig) {
                 ret = Mock.mock(api.template)
             }
 
+            if (resp.headersSent) return
+
             if (typeof ret === 'object') {
                 resp.json(ret)
             } else {
@@ -60,7 +62,7 @@ function buildMockRouter(mockConfig: MockConfig) {
                 || !api.template
                 || typeof api.template !== 'object' && typeof api.template !== 'function'
         ) {
-            console.warn('Invalid mock api:', api.url)
+            logger.warn('Invalid mocking api: ' + api.url)
         } else {
             mountAPI(api)
         }
