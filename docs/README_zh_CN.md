@@ -131,7 +131,7 @@ module.exports = {
 |----------	|-----------------------------	|----- |--------	|--------------------------------- |
 | url      	| `string`                  	| 是   	|        	| 接口相对`prefix`的地址，一般以`/`开头 |
 | method   	| `string`                  	| 否   	| `all`  	| 接口`Method`，默认支持全部类型的`Method` |
-| template 	| `object | MockAPIHandler` 	| 是   	|        	| 接口描述，设置为`object`时视为`mockjs template`（详见[Syntax](https://github.com/nuysoft/Mock/wiki/Syntax-Specification)），设置为函数时可以自定义返回结果 |
+| template 	| `object \| MockAPIHandler` 	| 是   	|        	| 接口描述，设置为`object`时视为`mockjs template`（详见[Syntax](https://github.com/nuysoft/Mock/wiki/Syntax-Specification)），设置为函数时可以自定义返回结果 |
 
 - `MockAPIHandler`
 
